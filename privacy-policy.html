@@ -10,6 +10,7 @@
             --text-color: #212529;
             --accent-color: #0d6efd;
             --border-color: #e9ecef;
+            --muted-color: #6c757d;
         }
         @media (prefers-color-scheme: dark) {
             :root {
@@ -17,10 +18,12 @@
                 --text-color: #e0e0e0;
                 --accent-color: #6ea8fe;
                 --border-color: #2d2d2d;
+                --muted-color: #adb5bd;
             }
         }
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+                Roboto, Helvetica, Arial, sans-serif;
             line-height: 1.6;
             max-width: 800px;
             margin: 0 auto;
@@ -34,7 +37,7 @@
             margin-bottom: 8px;
         }
         .date {
-            color: #6c757d;
+            color: var(--muted-color);
             font-size: 0.95rem;
             margin-bottom: 24px;
         }
@@ -60,44 +63,116 @@
 <body>
 
     <h1>Privacy Policy for NanoMind AI</h1>
-    <p class="date"><strong>Last Updated:</strong> August 15, 2026</p>
+    <p class="date"><strong>Last Updated:</strong> November 14, 2026</p>
 
-    <p>At NanoMind AI, we prioritize your privacy. This application is designed to run AI models entirely on your device.</p>
+    <p>
+        At NanoMind AI, we prioritize your privacy. This application is
+        designed to run AI models entirely on your device.
+    </p>
 
     <h2>1. Data Collection</h2>
-    <p>NanoMind AI does not collect, store, or transmit any of your personal data, chat history, prompts, or AI-generated responses to us or to any external server. All AI processing (inference) happens locally on your device's hardware and never leaves it.</p>
+    <p>
+        Chat history, imported documents, extracted passages, and
+        document-grounded answer references are stored locally in the app's
+        private storage. All AI processing (inference) happens locally on your
+        device. The app does not send conversations or documents to us unless
+        you choose to include information in a report.
+    </p>
 
     <h2>2. Internet Access</h2>
-    <p>This app requires internet access solely to download AI model files (from Hugging Face or a URL you provide) so they can be stored and run locally. Once a model is downloaded, no internet connection is required to chat with it, and no conversation data is sent over the network.</p>
+    <p>
+        Internet access is used for model downloads, loading fonts from Google
+        when needed, app update checks, and other explicitly networked app
+        features. These services may receive connection information such as
+        your IP address.
+    </p>
+    <p>
+        Document import, indexing, retrieval, and document-grounded chat do not
+        require a network connection once the chat model is on the device.
+        No conversation or document data is sent over the network by the
+        document retrieval feature.
+    </p>
 
     <h2>3. Model Files and Local Storage</h2>
-    <p>Models you download are stored in this app's private storage on your device. We do not track, log, or transmit which models you download or how you use them.</p>
+    <p>
+        Models, documents you select, extracted passages, and their local search
+        index are stored in the app's private storage on your device. You can
+        remove imported documents in My Documents. Existing chat answers and
+        their source references remain in local conversation history until you
+        delete that conversation.
+    </p>
 
-    <h2>4. Custom Model Imports</h2>
-    <p>If you choose to import a model from a custom URL, that request goes directly from your device to the address you provide (which may not be under our control). We do not inspect, log, or store the contents of custom downloads. You are responsible for ensuring any custom source is trustworthy and that you have the right to download and use the file.</p>
+    <h2>4. Reports</h2>
+    <p>
+        If you submit a report, the app sends the model name, reason, optional
+        details, optional response excerpt, and submission time to us using
+        Google Cloud Firestore. Google may receive connection information such
+        as your IP address. Please do not include sensitive information.
+    </p>
+    <p>
+        A report submitted while offline may be sent when the connection
+        returns. We use reports to investigate and improve safety; they remain
+        stored until deleted. Contact us at the address below to request
+        deletion. Reports previously saved only on your device are not
+        automatically uploaded.
+    </p>
 
-    <h2>5. Permissions Used</h2>
+    <h2>5. Custom Model Imports</h2>
+    <p>
+        If you choose to import a model from a custom URL, that request goes
+        directly from your device to the address you provide, which may not be
+        under our control. We do not inspect, log, or store the contents of
+        custom downloads. You are responsible for ensuring any custom source is
+        trustworthy and that you have the right to download and use the file.
+    </p>
+
+    <h2>6. Permissions Used</h2>
     <ul>
-        <li><strong>Internet:</strong> To download model files.</li>
-        <li><strong>Notifications:</strong> To show download progress and completion status.</li>
-        <li><strong>Background/Foreground Service:</strong> To allow large model downloads to continue and survive the app being backgrounded.</li>
+        <li><strong>Internet:</strong> To download model files and use the
+            networked features described above.</li>
+        <li><strong>Notifications:</strong> To show download progress and
+            completion status.</li>
+        <li><strong>Background/Foreground Service:</strong> To allow large
+            model downloads to continue when the app is backgrounded.</li>
     </ul>
-    <p>No permission is used to access your contacts, photos, camera, microphone, or precise location.</p>
+    <p>
+        The system document picker only provides access to files you choose to
+        import; the app does not request broad access to your storage or photo
+        library. No permission is used to access your contacts, camera,
+        microphone, or precise location.
+    </p>
 
-    <h2>6. Analytics and Advertising</h2>
-    <p>We do not use any third-party analytics, advertising, or tracking SDKs in this application.</p>
+    <h2>7. Analytics and Advertising</h2>
+    <p>
+        We do not use any third-party analytics, advertising, or tracking SDKs
+        in this application.
+    </p>
 
-    <h2>7. Children's Privacy</h2>
-    <p>This app is not directed at children under 13 (or the applicable age of digital consent in your region), and we do not knowingly collect any data from children, since we do not collect personal data from any user.</p>
+    <h2>8. Children's Privacy</h2>
+    <p>
+        This app is not directed at children under 13, or the applicable age
+        of digital consent in your region, and we do not knowingly collect
+        personal data from children.
+    </p>
 
-    <h2>8. Third-Party Model Providers</h2>
-    <p>Model files are hosted by third parties (e.g., Hugging Face, or a source you provide). Downloading a model means your device connects directly to that host; please review their respective privacy practices as well.</p>
+    <h2>9. Third-Party Model Providers</h2>
+    <p>
+        Model files are hosted by third parties, such as Hugging Face or a
+        source you provide. Downloading a model means your device connects
+        directly to that host; please review its privacy practices as well.
+    </p>
 
-    <h2>9. Changes to This Policy</h2>
-    <p>We may update this Privacy Policy from time to time. Continued use of the app after changes constitutes acceptance of the updated policy.</p>
+    <h2>10. Changes to This Policy</h2>
+    <p>
+        We may update this Privacy Policy from time to time. Continued use of
+        the app after changes constitutes acceptance of the updated policy.
+    </p>
 
-    <h2>10. Contact</h2>
-    <p>If you have any questions about this privacy policy, please contact us at <a href="mailto:wasimxaman13@gmail.com">wasimxaman13@gmail.com</a>.</p>
+    <h2>11. Contact</h2>
+    <p>
+        If you have any questions about this privacy policy, please contact us
+        at <a href="mailto:wasimxaman13@gmail.com">wasimxaman13@gmail.com</a>.
+    </p>
 
 </body>
 </html>
